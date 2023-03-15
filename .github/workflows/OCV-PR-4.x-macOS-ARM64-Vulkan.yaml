@@ -25,7 +25,7 @@ env:
 
 jobs:
   BuildAndTest:
-    runs-on: OpenCVs-Mac-mini-M1
+    runs-on: [self-hosted,macOS,ARM64]
     defaults:
       run:
         shell: bash
