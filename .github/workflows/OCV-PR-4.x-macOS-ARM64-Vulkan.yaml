@@ -37,7 +37,7 @@ jobs:
       timeout-minutes: 60
       if: ${{ github.event.repository.name == 'ci-gha-workflow' }}
       run: |
-        echo "TARGET_BRANCH_NAME=4.x" >> $GITHUB_ENV
+        echo "TARGET_BRANCH_NAME=upstream_4x_back" >> $GITHUB_ENV
     - name: Setup test environment
       if: ${{ github.event.repository.name != 'ci-gha-workflow' }}
       run: |
