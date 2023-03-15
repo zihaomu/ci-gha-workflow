@@ -25,7 +25,7 @@ env:
 
 jobs:
   BuildAndTest:
-    runs-on: [self-hosted, "vulkan-ci"]
+    runs-on: [self-hosted, vulkan-ci]
     defaults:
       run:
         shell: bash
