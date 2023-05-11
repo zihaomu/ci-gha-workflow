@@ -32,7 +32,7 @@ jobs:
       run:
         shell: bash
     container:
-      image: quay.io/opencv-ci/opencv-ubuntu-20.04-arm64:20220901
+      image: quay.io/opencv-ci/opencv-ubuntu-20.04-arm64:20230413
       volumes:
         - /home/opencv-cn/git_cache:/home/ci/git_cache
         - /home/opencv-cn/ci_cache/opencv:/home/ci/.ccache
@@ -161,8 +161,8 @@ jobs:
       timeout-minutes: 60
       if: ${{ always() && steps.build-opencv.outcome == 'success' }}
       run: |
-        cd ${{ env.OPENCV_DOCKER_WORKDIR }}/modules/python/test
-        python3 ./test.py --repo $HOME/opencv -v
+        cd $HOME/build
+        python3 $HOME/opencv/modules/python/test/test.py --repo $HOME/opencv -v
     - name: Java
       timeout-minutes: 60
       id: java-test
@@ -182,7 +182,7 @@ jobs:
       run:
         shell: bash
     container:
-      image: quay.io/opencv-ci/opencv-ubuntu-20.04-arm64:20220901
+      image: quay.io/opencv-ci/opencv-ubuntu-20.04-arm64:20230413
       volumes:
         - /home/opencv-cn/git_cache:/home/ci/git_cache
         - /home/opencv-cn/ci_cache/opencv:/home/ci/.ccache
